@@ -74,6 +74,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Encontros\BuscaEncontro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Encontros\BuscaEncontro.Designer.cs">
+      <DependentUpon>BuscaEncontro.cs</DependentUpon>
+    </Compile>
     <Compile Include="Encontros\NovoEncontro.cs">
       <SubType>Form</SubType>
     </Compile>
