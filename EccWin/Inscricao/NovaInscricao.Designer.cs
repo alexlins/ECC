@@ -81,6 +81,7 @@
             this.txtELAEmail = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.tabEndereco = new System.Windows.Forms.TabPage();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.btnSavePicture = new System.Windows.Forms.Button();
             this.btnPicture = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -101,6 +102,8 @@
             this.label22 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.tabFilhos = new System.Windows.Forms.TabPage();
+            this.txtTelefoneContato = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.txtendereco = new System.Windows.Forms.TextBox();
             this.TxtParentesco = new System.Windows.Forms.TextBox();
             this.TxtComQuemFic = new System.Windows.Forms.TextBox();
@@ -182,8 +185,27 @@
             this.label40 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
             this.txtELAPai = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.txtTelefoneContato = new System.Windows.Forms.Label();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.txtEquipeConvite = new System.Windows.Forms.Panel();
+            this.txtELAIgreja = new System.Windows.Forms.TextBox();
+            this.label34 = new System.Windows.Forms.Label();
+            this.txtELEIgreja = new System.Windows.Forms.TextBox();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label63 = new System.Windows.Forms.Label();
+            this.txtELAConviteMail = new System.Windows.Forms.TextBox();
+            this.label64 = new System.Windows.Forms.Label();
+            this.label65 = new System.Windows.Forms.Label();
+            this.label66 = new System.Windows.Forms.Label();
+            this.label67 = new System.Windows.Forms.Label();
+            this.txtELAConviteCel = new System.Windows.Forms.TextBox();
+            this.txtELAConvite = new System.Windows.Forms.TextBox();
+            this.txtELEConviteMail = new System.Windows.Forms.TextBox();
+            this.label68 = new System.Windows.Forms.Label();
+            this.label69 = new System.Windows.Forms.Label();
+            this.label70 = new System.Windows.Forms.Label();
+            this.label71 = new System.Windows.Forms.Label();
+            this.txtELEConviteCel = new System.Windows.Forms.TextBox();
+            this.txtELEConvite = new System.Windows.Forms.TextBox();
             this.pnlResultado.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -208,6 +230,7 @@
             this.splitContainer2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnFechar
@@ -352,6 +375,7 @@
             this.tabControl1.Controls.Add(this.tabEndereco);
             this.tabControl1.Controls.Add(this.tabFilhos);
             this.tabControl1.Controls.Add(this.tabFiliacao);
+            this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Location = new System.Drawing.Point(16, 125);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -711,6 +735,7 @@
             // tabEndereco
             // 
             this.tabEndereco.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(245)))));
+            this.tabEndereco.Controls.Add(this.maskedTextBox1);
             this.tabEndereco.Controls.Add(this.btnSavePicture);
             this.tabEndereco.Controls.Add(this.btnPicture);
             this.tabEndereco.Controls.Add(this.pictureBox1);
@@ -736,6 +761,14 @@
             this.tabEndereco.Size = new System.Drawing.Size(937, 315);
             this.tabEndereco.TabIndex = 1;
             this.tabEndereco.Text = "Endereço";
+            // 
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.Location = new System.Drawing.Point(77, 225);
+            this.maskedTextBox1.Mask = "00000-000";
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(117, 20);
+            this.maskedTextBox1.TabIndex = 19;
             // 
             // btnSavePicture
             // 
@@ -919,6 +952,22 @@
             this.tabFilhos.Size = new System.Drawing.Size(937, 315);
             this.tabFilhos.TabIndex = 2;
             this.tabFilhos.Text = "Filhos";
+            // 
+            // txtTelefoneContato
+            // 
+            this.txtTelefoneContato.AutoSize = true;
+            this.txtTelefoneContato.Location = new System.Drawing.Point(10, 282);
+            this.txtTelefoneContato.Name = "txtTelefoneContato";
+            this.txtTelefoneContato.Size = new System.Drawing.Size(52, 13);
+            this.txtTelefoneContato.TabIndex = 26;
+            this.txtTelefoneContato.Text = "Telefone:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(77, 282);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(107, 20);
+            this.textBox1.TabIndex = 25;
             // 
             // txtendereco
             // 
@@ -1659,21 +1708,198 @@
             this.txtELAPai.Size = new System.Drawing.Size(362, 20);
             this.txtELAPai.TabIndex = 34;
             // 
-            // textBox1
+            // tabPage1
             // 
-            this.textBox1.Location = new System.Drawing.Point(77, 282);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(107, 20);
-            this.textBox1.TabIndex = 25;
+            this.tabPage1.Controls.Add(this.txtEquipeConvite);
+            this.tabPage1.Controls.Add(this.txtELAIgreja);
+            this.tabPage1.Controls.Add(this.label34);
+            this.tabPage1.Controls.Add(this.txtELEIgreja);
+            this.tabPage1.Controls.Add(this.label36);
+            this.tabPage1.Controls.Add(this.label63);
+            this.tabPage1.Controls.Add(this.txtELAConviteMail);
+            this.tabPage1.Controls.Add(this.label64);
+            this.tabPage1.Controls.Add(this.label65);
+            this.tabPage1.Controls.Add(this.label66);
+            this.tabPage1.Controls.Add(this.label67);
+            this.tabPage1.Controls.Add(this.txtELAConviteCel);
+            this.tabPage1.Controls.Add(this.txtELAConvite);
+            this.tabPage1.Controls.Add(this.txtELEConviteMail);
+            this.tabPage1.Controls.Add(this.label68);
+            this.tabPage1.Controls.Add(this.label69);
+            this.tabPage1.Controls.Add(this.label70);
+            this.tabPage1.Controls.Add(this.label71);
+            this.tabPage1.Controls.Add(this.txtELEConviteCel);
+            this.tabPage1.Controls.Add(this.txtELEConvite);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(937, 315);
+            this.tabPage1.TabIndex = 4;
+            this.tabPage1.Text = "Casal que Convidou";
+            this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // txtTelefoneContato
+            // txtEquipeConvite
             // 
-            this.txtTelefoneContato.AutoSize = true;
-            this.txtTelefoneContato.Location = new System.Drawing.Point(10, 282);
-            this.txtTelefoneContato.Name = "txtTelefoneContato";
-            this.txtTelefoneContato.Size = new System.Drawing.Size(52, 13);
-            this.txtTelefoneContato.TabIndex = 26;
-            this.txtTelefoneContato.Text = "Telefone:";
+            this.txtEquipeConvite.BackColor = System.Drawing.SystemColors.Window;
+            this.txtEquipeConvite.Location = new System.Drawing.Point(135, 243);
+            this.txtEquipeConvite.Name = "txtEquipeConvite";
+            this.txtEquipeConvite.Size = new System.Drawing.Size(672, 54);
+            this.txtEquipeConvite.TabIndex = 72;
+            // 
+            // txtELAIgreja
+            // 
+            this.txtELAIgreja.Location = new System.Drawing.Point(509, 198);
+            this.txtELAIgreja.Name = "txtELAIgreja";
+            this.txtELAIgreja.Size = new System.Drawing.Size(298, 20);
+            this.txtELAIgreja.TabIndex = 71;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(509, 182);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(149, 13);
+            this.label34.TabIndex = 70;
+            this.label34.Text = "Igreja que Congrega? (Ágape)";
+            // 
+            // txtELEIgreja
+            // 
+            this.txtELEIgreja.Location = new System.Drawing.Point(64, 198);
+            this.txtELEIgreja.Name = "txtELEIgreja";
+            this.txtELEIgreja.Size = new System.Drawing.Size(298, 20);
+            this.txtELEIgreja.TabIndex = 69;
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(64, 182);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(149, 13);
+            this.label36.TabIndex = 68;
+            this.label36.Text = "Igreja que Congrega? (Ágape)";
+            // 
+            // label63
+            // 
+            this.label63.AutoSize = true;
+            this.label63.Location = new System.Drawing.Point(130, 222);
+            this.label63.Name = "label63";
+            this.label63.Size = new System.Drawing.Size(143, 13);
+            this.label63.TabIndex = 67;
+            this.label63.Text = "Equipe que está trabalhando";
+            // 
+            // txtELAConviteMail
+            // 
+            this.txtELAConviteMail.Location = new System.Drawing.Point(509, 155);
+            this.txtELAConviteMail.Name = "txtELAConviteMail";
+            this.txtELAConviteMail.Size = new System.Drawing.Size(298, 20);
+            this.txtELAConviteMail.TabIndex = 66;
+            // 
+            // label64
+            // 
+            this.label64.AutoSize = true;
+            this.label64.Location = new System.Drawing.Point(509, 136);
+            this.label64.Name = "label64";
+            this.label64.Size = new System.Drawing.Size(35, 13);
+            this.label64.TabIndex = 65;
+            this.label64.Text = "E-mail";
+            // 
+            // label65
+            // 
+            this.label65.AutoSize = true;
+            this.label65.Location = new System.Drawing.Point(509, 91);
+            this.label65.Name = "label65";
+            this.label65.Size = new System.Drawing.Size(39, 13);
+            this.label65.TabIndex = 64;
+            this.label65.Text = "Celular";
+            // 
+            // label66
+            // 
+            this.label66.AutoSize = true;
+            this.label66.Location = new System.Drawing.Point(509, 46);
+            this.label66.Name = "label66";
+            this.label66.Size = new System.Drawing.Size(82, 13);
+            this.label66.TabIndex = 63;
+            this.label66.Text = "Nome Completo";
+            // 
+            // label67
+            // 
+            this.label67.AutoSize = true;
+            this.label67.Location = new System.Drawing.Point(511, 16);
+            this.label67.Name = "label67";
+            this.label67.Size = new System.Drawing.Size(22, 13);
+            this.label67.TabIndex = 62;
+            this.label67.Text = "Ela";
+            // 
+            // txtELAConviteCel
+            // 
+            this.txtELAConviteCel.Location = new System.Drawing.Point(509, 110);
+            this.txtELAConviteCel.Name = "txtELAConviteCel";
+            this.txtELAConviteCel.Size = new System.Drawing.Size(298, 20);
+            this.txtELAConviteCel.TabIndex = 61;
+            // 
+            // txtELAConvite
+            // 
+            this.txtELAConvite.Location = new System.Drawing.Point(509, 65);
+            this.txtELAConvite.Name = "txtELAConvite";
+            this.txtELAConvite.Size = new System.Drawing.Size(299, 20);
+            this.txtELAConvite.TabIndex = 60;
+            // 
+            // txtELEConviteMail
+            // 
+            this.txtELEConviteMail.Location = new System.Drawing.Point(64, 155);
+            this.txtELEConviteMail.Name = "txtELEConviteMail";
+            this.txtELEConviteMail.Size = new System.Drawing.Size(298, 20);
+            this.txtELEConviteMail.TabIndex = 59;
+            // 
+            // label68
+            // 
+            this.label68.AutoSize = true;
+            this.label68.Location = new System.Drawing.Point(64, 136);
+            this.label68.Name = "label68";
+            this.label68.Size = new System.Drawing.Size(35, 13);
+            this.label68.TabIndex = 58;
+            this.label68.Text = "E-mail";
+            // 
+            // label69
+            // 
+            this.label69.AutoSize = true;
+            this.label69.Location = new System.Drawing.Point(64, 91);
+            this.label69.Name = "label69";
+            this.label69.Size = new System.Drawing.Size(39, 13);
+            this.label69.TabIndex = 57;
+            this.label69.Text = "Celular";
+            // 
+            // label70
+            // 
+            this.label70.AutoSize = true;
+            this.label70.Location = new System.Drawing.Point(64, 46);
+            this.label70.Name = "label70";
+            this.label70.Size = new System.Drawing.Size(82, 13);
+            this.label70.TabIndex = 56;
+            this.label70.Text = "Nome Completo";
+            // 
+            // label71
+            // 
+            this.label71.AutoSize = true;
+            this.label71.Location = new System.Drawing.Point(65, 16);
+            this.label71.Name = "label71";
+            this.label71.Size = new System.Drawing.Size(22, 13);
+            this.label71.TabIndex = 55;
+            this.label71.Text = "Ele";
+            // 
+            // txtELEConviteCel
+            // 
+            this.txtELEConviteCel.Location = new System.Drawing.Point(64, 110);
+            this.txtELEConviteCel.Name = "txtELEConviteCel";
+            this.txtELEConviteCel.Size = new System.Drawing.Size(298, 20);
+            this.txtELEConviteCel.TabIndex = 54;
+            // 
+            // txtELEConvite
+            // 
+            this.txtELEConvite.Location = new System.Drawing.Point(64, 65);
+            this.txtELEConvite.Name = "txtELEConvite";
+            this.txtELEConvite.Size = new System.Drawing.Size(299, 20);
+            this.txtELEConvite.TabIndex = 53;
             // 
             // NovaInscricao
             // 
@@ -1725,6 +1951,8 @@
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1887,5 +2115,27 @@
         private System.Windows.Forms.Button btnSavePicture;
         private System.Windows.Forms.Label txtTelefoneContato;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.Panel txtEquipeConvite;
+        private System.Windows.Forms.TextBox txtELAIgreja;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.TextBox txtELEIgreja;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Label label63;
+        private System.Windows.Forms.TextBox txtELAConviteMail;
+        private System.Windows.Forms.Label label64;
+        private System.Windows.Forms.Label label65;
+        private System.Windows.Forms.Label label66;
+        private System.Windows.Forms.Label label67;
+        private System.Windows.Forms.TextBox txtELAConviteCel;
+        private System.Windows.Forms.TextBox txtELAConvite;
+        private System.Windows.Forms.TextBox txtELEConviteMail;
+        private System.Windows.Forms.Label label68;
+        private System.Windows.Forms.Label label69;
+        private System.Windows.Forms.Label label70;
+        private System.Windows.Forms.Label label71;
+        private System.Windows.Forms.TextBox txtELEConviteCel;
+        private System.Windows.Forms.TextBox txtELEConvite;
     }
 }
