@@ -80,6 +80,22 @@ namespace EccInfra
             }
         }
         private ObjectSet<Usuarios> _Usuarios;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<Encontros> Encontros
+        {
+            get
+            {
+                if ((_Encontros == null))
+                {
+                    _Encontros = base.CreateObjectSet<Encontros>("Encontros");
+                }
+                return _Encontros;
+            }
+        }
+        private ObjectSet<Encontros> _Encontros;
 
         #endregion
 
@@ -92,6 +108,14 @@ namespace EccInfra
         {
             base.AddObject("Usuarios", usuarios);
         }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the Encontros EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToEncontros(Encontros encontros)
+        {
+            base.AddObject("Encontros", encontros);
+        }
 
         #endregion
 
@@ -100,6 +124,239 @@ namespace EccInfra
     #endregion
 
     #region Entities
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="EccModel", Name="Encontros")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class Encontros : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new Encontros object.
+        /// </summary>
+        /// <param name="encontroId">Initial value of the EncontroId property.</param>
+        /// <param name="nome">Initial value of the Nome property.</param>
+        /// <param name="eventoConfirmado">Initial value of the EventoConfirmado property.</param>
+        /// <param name="eventoRealizado">Initial value of the EventoRealizado property.</param>
+        /// <param name="qtdeCasais">Initial value of the QtdeCasais property.</param>
+        public static Encontros CreateEncontros(global::System.Int32 encontroId, global::System.String nome, global::System.Boolean eventoConfirmado, global::System.Boolean eventoRealizado, global::System.Int32 qtdeCasais)
+        {
+            Encontros encontros = new Encontros();
+            encontros.EncontroId = encontroId;
+            encontros.Nome = nome;
+            encontros.EventoConfirmado = eventoConfirmado;
+            encontros.EventoRealizado = eventoRealizado;
+            encontros.QtdeCasais = qtdeCasais;
+            return encontros;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 EncontroId
+        {
+            get
+            {
+                return _EncontroId;
+            }
+            set
+            {
+                if (_EncontroId != value)
+                {
+                    OnEncontroIdChanging(value);
+                    ReportPropertyChanging("EncontroId");
+                    _EncontroId = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("EncontroId");
+                    OnEncontroIdChanged();
+                }
+            }
+        }
+        private global::System.Int32 _EncontroId;
+        partial void OnEncontroIdChanging(global::System.Int32 value);
+        partial void OnEncontroIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Nome
+        {
+            get
+            {
+                return _Nome;
+            }
+            set
+            {
+                OnNomeChanging(value);
+                ReportPropertyChanging("Nome");
+                _Nome = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Nome");
+                OnNomeChanged();
+            }
+        }
+        private global::System.String _Nome;
+        partial void OnNomeChanging(global::System.String value);
+        partial void OnNomeChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Local
+        {
+            get
+            {
+                return _Local;
+            }
+            set
+            {
+                OnLocalChanging(value);
+                ReportPropertyChanging("Local");
+                _Local = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Local");
+                OnLocalChanged();
+            }
+        }
+        private global::System.String _Local;
+        partial void OnLocalChanging(global::System.String value);
+        partial void OnLocalChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> DtInicial
+        {
+            get
+            {
+                return _DtInicial;
+            }
+            set
+            {
+                OnDtInicialChanging(value);
+                ReportPropertyChanging("DtInicial");
+                _DtInicial = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("DtInicial");
+                OnDtInicialChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _DtInicial;
+        partial void OnDtInicialChanging(Nullable<global::System.DateTime> value);
+        partial void OnDtInicialChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> DtFinal
+        {
+            get
+            {
+                return _DtFinal;
+            }
+            set
+            {
+                OnDtFinalChanging(value);
+                ReportPropertyChanging("DtFinal");
+                _DtFinal = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("DtFinal");
+                OnDtFinalChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _DtFinal;
+        partial void OnDtFinalChanging(Nullable<global::System.DateTime> value);
+        partial void OnDtFinalChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Boolean EventoConfirmado
+        {
+            get
+            {
+                return _EventoConfirmado;
+            }
+            set
+            {
+                OnEventoConfirmadoChanging(value);
+                ReportPropertyChanging("EventoConfirmado");
+                _EventoConfirmado = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("EventoConfirmado");
+                OnEventoConfirmadoChanged();
+            }
+        }
+        private global::System.Boolean _EventoConfirmado;
+        partial void OnEventoConfirmadoChanging(global::System.Boolean value);
+        partial void OnEventoConfirmadoChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Boolean EventoRealizado
+        {
+            get
+            {
+                return _EventoRealizado;
+            }
+            set
+            {
+                OnEventoRealizadoChanging(value);
+                ReportPropertyChanging("EventoRealizado");
+                _EventoRealizado = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("EventoRealizado");
+                OnEventoRealizadoChanged();
+            }
+        }
+        private global::System.Boolean _EventoRealizado;
+        partial void OnEventoRealizadoChanging(global::System.Boolean value);
+        partial void OnEventoRealizadoChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 QtdeCasais
+        {
+            get
+            {
+                return _QtdeCasais;
+            }
+            set
+            {
+                OnQtdeCasaisChanging(value);
+                ReportPropertyChanging("QtdeCasais");
+                _QtdeCasais = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("QtdeCasais");
+                OnQtdeCasaisChanged();
+            }
+        }
+        private global::System.Int32 _QtdeCasais;
+        partial void OnQtdeCasaisChanging(global::System.Int32 value);
+        partial void OnQtdeCasaisChanged();
+
+        #endregion
+
+    
+    }
     
     /// <summary>
     /// No Metadata Documentation available.

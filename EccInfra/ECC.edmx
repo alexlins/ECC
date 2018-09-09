@@ -4,10 +4,24 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="EccModel.Store" Alias="Self" Provider="System.Data.SqlServerCe.3.5" ProviderManifestToken="3.5" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+    <Schema Namespace="EccModel.Store" Alias="Self" Provider="System.Data.SqlServerCe.3.5" ProviderManifestToken="3.5" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
         <EntityContainer Name="EccModelStoreContainer">
+          <EntitySet Name="Encontros" EntityType="EccModel.Store.Encontros" store:Type="Tables" />
           <EntitySet Name="Usuarios" EntityType="EccModel.Store.Usuarios" store:Type="Tables" />
         </EntityContainer>
+        <EntityType Name="Encontros">
+          <Key>
+            <PropertyRef Name="EncontroId" />
+          </Key>
+          <Property Name="EncontroId" Type="int" Nullable="false" />
+          <Property Name="Nome" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Local" Type="nvarchar" MaxLength="400" />
+          <Property Name="DtInicial" Type="datetime" />
+          <Property Name="DtFinal" Type="datetime" />
+          <Property Name="EventoConfirmado" Type="bit" Nullable="false" />
+          <Property Name="EventoRealizado" Type="bit" Nullable="false" />
+          <Property Name="QtdeCasais" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="Usuarios">
           <Key>
             <PropertyRef Name="IdUsuario" />
@@ -17,13 +31,13 @@
           <Property Name="IsActive" Type="bit" Nullable="false" />
           <Property Name="Nivel" Type="tinyint" Nullable="false" />
         </EntityType>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="EccModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
         <EntityContainer Name="EccEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Usuarios" EntityType="EccModel.Usuarios" />
+          <EntitySet Name="Encontros" EntityType="EccModel.Encontros" />
         </EntityContainer>
         <EntityType Name="Usuarios">
           <Key>
@@ -33,6 +47,19 @@
           <Property Name="Nome" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
           <Property Name="IsActive" Type="Boolean" Nullable="false" />
           <Property Name="Nivel" Type="Byte" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Encontros">
+          <Key>
+            <PropertyRef Name="EncontroId" />
+          </Key>
+          <Property Type="Int32" Name="EncontroId" Nullable="false" />
+          <Property Type="String" Name="Nome" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Local" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="DtInicial" />
+          <Property Type="DateTime" Name="DtFinal" />
+          <Property Type="Boolean" Name="EventoConfirmado" Nullable="false" />
+          <Property Type="Boolean" Name="EventoRealizado" Nullable="false" />
+          <Property Type="Int32" Name="QtdeCasais" Nullable="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -47,6 +74,20 @@
                 <ScalarProperty Name="Nome" ColumnName="Nome" />
                 <ScalarProperty Name="IsActive" ColumnName="IsActive" />
                 <ScalarProperty Name="Nivel" ColumnName="Nivel" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Encontros">
+            <EntityTypeMapping TypeName="EccModel.Encontros">
+              <MappingFragment StoreEntitySet="Encontros">
+                <ScalarProperty Name="QtdeCasais" ColumnName="QtdeCasais" />
+                <ScalarProperty Name="EventoRealizado" ColumnName="EventoRealizado" />
+                <ScalarProperty Name="EventoConfirmado" ColumnName="EventoConfirmado" />
+                <ScalarProperty Name="DtFinal" ColumnName="DtFinal" />
+                <ScalarProperty Name="DtInicial" ColumnName="DtInicial" />
+                <ScalarProperty Name="Local" ColumnName="Local" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="EncontroId" ColumnName="EncontroId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -72,6 +113,7 @@
     <Diagrams>
       <Diagram Name="ECC">
         <EntityTypeShape EntityType="EccModel.Usuarios" Width="1.5" PointX="0.75" PointY="0.75" Height="1.787985026041667" IsExpanded="true" />
+        <EntityTypeShape EntityType="EccModel.Encontros" Width="1.5" PointX="3.375" PointY="0.75" Height="2.5571907552083326" />
       </Diagram>
     </Diagrams>
   </Designer>

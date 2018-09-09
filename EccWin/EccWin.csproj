@@ -112,6 +112,9 @@
       <DependentUpon>Encontro_todos.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <EmbeddedResource Include="Encontros\BuscaEncontro.resx">
+      <DependentUpon>BuscaEncontro.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Encontros\NovoEncontro.resx">
       <DependentUpon>NovoEncontro.cs</DependentUpon>
     </EmbeddedResource>
@@ -153,6 +156,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\EccCross\EccCross.csproj">
+      <Project>{5A5C1BD4-474D-47AE-B846-7D2CFDFACDC9}</Project>
+      <Name>EccCross</Name>
+    </ProjectReference>
     <ProjectReference Include="..\EccDomain\EccDomain.csproj">
       <Project>{632B3710-7E07-42A1-B4B6-35A123DD2EBA}</Project>
       <Name>EccDomain</Name>

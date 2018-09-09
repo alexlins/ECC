@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{632B3710-7E07-42A1-B4B6-35A123DD2EBA}</ProjectGuid>
+    <ProjectGuid>{5A5C1BD4-474D-47AE-B846-7D2CFDFACDC9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>EccDomain</RootNamespace>
-    <AssemblyName>EccDomain</AssemblyName>
+    <RootNamespace>EccCross</RootNamespace>
+    <AssemblyName>EccCross</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,18 +40,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Encontro.cs" />
+    <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\EccCross\EccCross.csproj">
-      <Project>{5A5C1BD4-474D-47AE-B846-7D2CFDFACDC9}</Project>
-      <Name>EccCross</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\EccInfra\EccInfra.csproj">
-      <Project>{E1315D87-DDF9-4734-8B28-A1BF2B79B01F}</Project>
-      <Name>EccInfra</Name>
-    </ProjectReference>
+    <Compile Include="ViewModel\EncontroRequestViewModel.cs" />
+    <Compile Include="ViewModel\EncontroResponseViewModel.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

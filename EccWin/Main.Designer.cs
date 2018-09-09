@@ -91,13 +91,14 @@
             // encontrosToolStripMenuItem
             // 
             this.encontrosToolStripMenuItem.Name = "encontrosToolStripMenuItem";
-            this.encontrosToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.encontrosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.encontrosToolStripMenuItem.Text = "Encontros";
+            this.encontrosToolStripMenuItem.Click += new System.EventHandler(this.encontrosToolStripMenuItem_Click);
             // 
             // casaisToolStripMenuItem
             // 
             this.casaisToolStripMenuItem.Name = "casaisToolStripMenuItem";
-            this.casaisToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.casaisToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.casaisToolStripMenuItem.Text = "Casais";
             // 
             // relatóriosToolStripMenuItem

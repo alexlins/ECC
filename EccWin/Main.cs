@@ -37,5 +37,12 @@ namespace EccWin
             ni.MdiParent = this;
             ni.Show();
         }
+
+        private void encontrosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BuscaEncontro be = new BuscaEncontro();
+            be.MdiParent = this;
+            be.Show();
+        }
     }
 }
