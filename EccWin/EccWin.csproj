@@ -106,6 +106,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Referencias\Convite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Referencias\Convite.Designer.cs">
+      <DependentUpon>Convite.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Referencias\Visita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Referencias\Visita.Designer.cs">
+      <DependentUpon>Visita.cs</DependentUpon>
+    </Compile>
     <Compile Include="Relatorios\Encontro_todos.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -137,6 +149,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Referencias\Convite.resx">
+      <DependentUpon>Convite.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Referencias\Visita.resx">
+      <DependentUpon>Visita.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Relatorios\Encontro_todos.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Encontro_todos.cs</LastGenOutput>
