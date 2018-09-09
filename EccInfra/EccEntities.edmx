@@ -14,13 +14,13 @@
             <PropertyRef Name="EncontroId" />
           </Key>
           <Property Name="EncontroId" Type="int" Nullable="false" />
-          <Property Name="Nome" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Nome" Type="nvarchar" MaxLength="100" />
           <Property Name="Local" Type="nvarchar" MaxLength="400" />
           <Property Name="DtInicial" Type="datetime" />
           <Property Name="DtFinal" Type="datetime" />
-          <Property Name="EventoConfirmado" Type="bit" Nullable="false" />
-          <Property Name="EventoRealizado" Type="bit" Nullable="false" />
-          <Property Name="QtdeCasais" Type="int" Nullable="false" />
+          <Property Name="EventoConfirmado" Type="bit" />
+          <Property Name="EventoRealizado" Type="bit" />
+          <Property Name="QtdeCasais" Type="int" />
         </EntityType>
         <EntityType Name="Usuarios">
           <Key>
@@ -53,13 +53,13 @@
             <PropertyRef Name="EncontroId" />
           </Key>
           <Property Type="Int32" Name="EncontroId" Nullable="false" />
-          <Property Type="String" Name="Nome" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Nome" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="Local" MaxLength="400" FixedLength="false" Unicode="true" />
           <Property Type="DateTime" Name="DtInicial" />
           <Property Type="DateTime" Name="DtFinal" />
-          <Property Type="Boolean" Name="EventoConfirmado" Nullable="false" />
-          <Property Type="Boolean" Name="EventoRealizado" Nullable="false" />
-          <Property Type="Int32" Name="QtdeCasais" Nullable="false" />
+          <Property Type="Boolean" Name="EventoConfirmado" />
+          <Property Type="Boolean" Name="EventoRealizado" />
+          <Property Type="Int32" Name="QtdeCasais" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -111,9 +111,9 @@
     </Options>
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
-      <Diagram Name="ECC">
-        <EntityTypeShape EntityType="EccModel.Usuarios" Width="1.5" PointX="0.75" PointY="0.75" Height="1.787985026041667" IsExpanded="true" />
-        <EntityTypeShape EntityType="EccModel.Encontros" Width="1.5" PointX="3.375" PointY="0.75" Height="2.5571907552083326" />
+      <Diagram Name="EccEntities">
+        <EntityTypeShape EntityType="EccModel.Usuarios" Width="1.5" PointX="2.75" PointY="0.75" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="EccModel.Encontros" Width="1.5" PointX="0.75" PointY="0.875" Height="2.5571907552083335" />
       </Diagram>
     </Diagrams>
   </Designer>

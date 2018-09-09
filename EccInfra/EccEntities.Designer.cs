@@ -139,18 +139,10 @@ namespace EccInfra
         /// Create a new Encontros object.
         /// </summary>
         /// <param name="encontroId">Initial value of the EncontroId property.</param>
-        /// <param name="nome">Initial value of the Nome property.</param>
-        /// <param name="eventoConfirmado">Initial value of the EventoConfirmado property.</param>
-        /// <param name="eventoRealizado">Initial value of the EventoRealizado property.</param>
-        /// <param name="qtdeCasais">Initial value of the QtdeCasais property.</param>
-        public static Encontros CreateEncontros(global::System.Int32 encontroId, global::System.String nome, global::System.Boolean eventoConfirmado, global::System.Boolean eventoRealizado, global::System.Int32 qtdeCasais)
+        public static Encontros CreateEncontros(global::System.Int32 encontroId)
         {
             Encontros encontros = new Encontros();
             encontros.EncontroId = encontroId;
-            encontros.Nome = nome;
-            encontros.EventoConfirmado = eventoConfirmado;
-            encontros.EventoRealizado = eventoRealizado;
-            encontros.QtdeCasais = qtdeCasais;
             return encontros;
         }
 
@@ -188,7 +180,7 @@ namespace EccInfra
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
         public global::System.String Nome
         {
@@ -200,7 +192,7 @@ namespace EccInfra
             {
                 OnNomeChanging(value);
                 ReportPropertyChanging("Nome");
-                _Nome = StructuralObject.SetValidValue(value, false);
+                _Nome = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("Nome");
                 OnNomeChanged();
             }
@@ -284,9 +276,9 @@ namespace EccInfra
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.Boolean EventoConfirmado
+        public Nullable<global::System.Boolean> EventoConfirmado
         {
             get
             {
@@ -301,16 +293,16 @@ namespace EccInfra
                 OnEventoConfirmadoChanged();
             }
         }
-        private global::System.Boolean _EventoConfirmado;
-        partial void OnEventoConfirmadoChanging(global::System.Boolean value);
+        private Nullable<global::System.Boolean> _EventoConfirmado;
+        partial void OnEventoConfirmadoChanging(Nullable<global::System.Boolean> value);
         partial void OnEventoConfirmadoChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.Boolean EventoRealizado
+        public Nullable<global::System.Boolean> EventoRealizado
         {
             get
             {
@@ -325,16 +317,16 @@ namespace EccInfra
                 OnEventoRealizadoChanged();
             }
         }
-        private global::System.Boolean _EventoRealizado;
-        partial void OnEventoRealizadoChanging(global::System.Boolean value);
+        private Nullable<global::System.Boolean> _EventoRealizado;
+        partial void OnEventoRealizadoChanging(Nullable<global::System.Boolean> value);
         partial void OnEventoRealizadoChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.Int32 QtdeCasais
+        public Nullable<global::System.Int32> QtdeCasais
         {
             get
             {
@@ -349,8 +341,8 @@ namespace EccInfra
                 OnQtdeCasaisChanged();
             }
         }
-        private global::System.Int32 _QtdeCasais;
-        partial void OnQtdeCasaisChanging(global::System.Int32 value);
+        private Nullable<global::System.Int32> _QtdeCasais;
+        partial void OnQtdeCasaisChanging(Nullable<global::System.Int32> value);
         partial void OnQtdeCasaisChanged();
 
         #endregion

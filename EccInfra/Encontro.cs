@@ -63,7 +63,11 @@ namespace EccInfra
             ee.QtdeCasais = item.QtdeCasais;
 
             if (ee.EncontroId == 0)
+            {
+                var ultimo = _entity.Encontros.OrderByDescending(o => o.EncontroId).ToList();
+                ee.EncontroId = ultimo[0].EncontroId + 1;
                 _entity.AddObject("Encontros", ee);
+            }
 
             _entity.SaveChanges();
 
