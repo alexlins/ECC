@@ -13,10 +13,12 @@ namespace EccWin.Encontros
 {
     public partial class NovoEncontro : Form
     {
+        Encontro _encontro;
         public NovoEncontro()
         {
             InitializeComponent();
             dtpInicial.Value = dtpFinal.Value = DateTime.Now;
+            _encontro = new Encontro();
         }
 
         private void NovoEncontro_Load(object sender, EventArgs e)
@@ -73,8 +75,7 @@ namespace EccWin.Encontros
                 ervm.EventoConfirmado = chkConfirmado.Checked;
                 ervm.EventoRealizado = chkRealizado.Checked;
 
-                Encontro encontro = new Encontro();
-                if (encontro.GravarEncontro(ervm))
+                if (_encontro.GravarEncontro(ervm))
                     lblResultado.Text = "Gravado com sucesso";
                 else
                     lblResultado.Text = "Erro na gravação";

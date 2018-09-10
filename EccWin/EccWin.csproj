@@ -80,6 +80,12 @@
     <Compile Include="Encontros\BuscaEncontro.Designer.cs">
       <DependentUpon>BuscaEncontro.cs</DependentUpon>
     </Compile>
+    <Compile Include="Encontros\EncontrosDetalhes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Encontros\EncontrosDetalhes.Designer.cs">
+      <DependentUpon>EncontrosDetalhes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Encontros\NovoEncontro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +132,9 @@
     </Compile>
     <EmbeddedResource Include="Encontros\BuscaEncontro.resx">
       <DependentUpon>BuscaEncontro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Encontros\EncontrosDetalhes.resx">
+      <DependentUpon>EncontrosDetalhes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Encontros\NovoEncontro.resx">
       <DependentUpon>NovoEncontro.cs</DependentUpon>

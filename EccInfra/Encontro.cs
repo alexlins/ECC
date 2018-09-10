@@ -25,20 +25,25 @@ namespace EccInfra
 
             foreach (var item in listaEncontros)
             {
-                resultado.Add(new EncontroResponseViewModel
-                {
-                    EncontroId = item.EncontroId,
-                    Local = item.Local,
-                    Nome = item.Nome,
-                    DtInicial = item.DtInicial,
-                    DtFinal = item.DtFinal,
-                    EventoConfirmado = item.EventoConfirmado,
-                    EventoRealizado = item.EventoRealizado,
-                    QtdeCasais = item.QtdeCasais
-                });
+                resultado.Add(MontaViewModel(item));
             }
 
             return resultado;
+        }
+
+        private static EncontroResponseViewModel MontaViewModel(Encontros item)
+        {
+            return new EncontroResponseViewModel
+            {
+                EncontroId = item.EncontroId,
+                Local = item.Local,
+                Nome = item.Nome,
+                DtInicial = item.DtInicial,
+                DtFinal = item.DtFinal,
+                EventoConfirmado = item.EventoConfirmado,
+                EventoRealizado = item.EventoRealizado,
+                QtdeCasais = item.QtdeCasais
+            };
         }
 
 
@@ -71,17 +76,20 @@ namespace EccInfra
 
             _entity.SaveChanges();
 
-            return new EncontroResponseViewModel()
+            return MontaViewModel(ee);
+        }
+
+        public EncontroResponseViewModel GetById(int id)
+        {
+            try
             {
-                EncontroId = ee.EncontroId,
-                Local = ee.Local,
-                Nome = ee.Nome,
-                DtInicial = ee.DtInicial,
-                DtFinal = ee.DtFinal,
-                EventoConfirmado = ee.EventoConfirmado,
-                EventoRealizado = ee.EventoRealizado,
-                QtdeCasais = ee.QtdeCasais
-            };
+                var result = _entity.Encontros.Where(x => x.EncontroId == id).First();
+                return MontaViewModel(result);
+            }
+            catch (Exception ex)
+            {
+                return new EncontroResponseViewModel();
+            }
         }
     }
 }

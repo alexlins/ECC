@@ -60,5 +60,15 @@ namespace EccDomain
 
             return resultado;
         }
+
+        public EncontroResponseViewModel GetById(int id)
+        {
+            return _infra.GetById(id);
+        }
+
+        public List<InscricaoResponseViewModel> GetInscritos(int IdEncontro)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
