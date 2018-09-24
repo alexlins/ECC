@@ -40,11 +40,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModel\EncontroRequestViewModel.cs" />
-    <Compile Include="ViewModel\EncontroResponseViewModel.cs" />
-    <Compile Include="ViewModel\InscricaoResponseViewModel.cs" />
+    <Compile Include="ViewModel\Request\CasaisConvidadoresRequestViewModel.cs" />
+    <Compile Include="ViewModel\Request\CasalRequestViewModel.cs" />
+    <Compile Include="ViewModel\Request\CasalVisitadorRequestViewModel.cs" />
+    <Compile Include="ViewModel\Request\CuidadoresRequestViewModel.cs" />
+    <Compile Include="ViewModel\Request\FilhosSolteirosRequestViewModel.cs" />
+    <Compile Include="ViewModel\Response\CasaisConvidadoresResponseViewModel.cs" />
+    <Compile Include="ViewModel\Response\CasalResponseViewModel.cs" />
+    <Compile Include="ViewModel\Response\CasalVisitadorResponseViewModel.cs" />
+    <Compile Include="ViewModel\Response\CuidadoresResponseViewModel.cs" />
+    <Compile Include="ViewModel\Request\EncontroRequestViewModel.cs" />
+    <Compile Include="ViewModel\Response\EncontroResponseViewModel.cs" />
+    <Compile Include="ViewModel\Request\FilhosCasadosRequestViewModel.cs" />
+    <Compile Include="ViewModel\Request\InscricaoRequestViewModel.cs" />
+    <Compile Include="ViewModel\Response\FilhosCasadosResponseViewModel.cs" />
+    <Compile Include="ViewModel\Response\FilhosSolteirosResponseViewModel.cs" />
+    <Compile Include="ViewModel\Response\InscricaoResponseViewModel.cs" />
+    <Compile Include="ViewModel\Request\UsuariosRequestViewModel.cs" />
+    <Compile Include="ViewModel\Response\UsuariosResponseViewModel.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

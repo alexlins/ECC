@@ -6,12 +6,68 @@
     <edmx:StorageModels>
     <Schema Namespace="EccModel.Store" Alias="Self" Provider="System.Data.SqlServerCe.3.5" ProviderManifestToken="3.5" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
         <EntityContainer Name="EccModelStoreContainer">
+          <EntitySet Name="Casais" EntityType="EccModel.Store.Casais" store:Type="Tables" />
           <EntitySet Name="CasaisConvidadores" EntityType="EccModel.Store.CasaisConvidadores" store:Type="Tables" />
           <EntitySet Name="CasaisVisitadores" EntityType="EccModel.Store.CasaisVisitadores" store:Type="Tables" />
+          <EntitySet Name="Cuidadores" EntityType="EccModel.Store.Cuidadores" store:Type="Tables" />
           <EntitySet Name="Encontros" EntityType="EccModel.Store.Encontros" store:Type="Tables" />
+          <EntitySet Name="FilhosCasados" EntityType="EccModel.Store.FilhosCasados" store:Type="Tables" />
+          <EntitySet Name="FilhosSolteiros" EntityType="EccModel.Store.FilhosSolteiros" store:Type="Tables" />
           <EntitySet Name="Inscricoes" EntityType="EccModel.Store.Inscricoes" store:Type="Tables" />
           <EntitySet Name="Usuarios" EntityType="EccModel.Store.Usuarios" store:Type="Tables" />
         </EntityContainer>
+        <EntityType Name="Casais">
+          <Key>
+            <PropertyRef Name="CasalId" />
+          </Key>
+          <Property Name="CasalId" Type="int" Nullable="false" />
+          <Property Name="NomeEle" Type="nvarchar" MaxLength="200" />
+          <Property Name="NomeEla" Type="nvarchar" MaxLength="200" />
+          <Property Name="ReligiaoEle" Type="nvarchar" MaxLength="100" />
+          <Property Name="ReligiaoEla" Type="nvarchar" MaxLength="100" />
+          <Property Name="DtNascimentoEle" Type="datetime" />
+          <Property Name="DtNascimentoEla" Type="datetime" />
+          <Property Name="EstadoCivil" Type="nvarchar" MaxLength="1" />
+          <Property Name="DtEstadoCivil" Type="datetime" />
+          <Property Name="Endereco" Type="nvarchar" MaxLength="100" />
+          <Property Name="CEP" Type="nvarchar" MaxLength="100" />
+          <Property Name="Numero" Type="nvarchar" MaxLength="100" />
+          <Property Name="Complemento" Type="nvarchar" MaxLength="100" />
+          <Property Name="Bairro" Type="nvarchar" MaxLength="100" />
+          <Property Name="Cidade" Type="nvarchar" MaxLength="100" />
+          <Property Name="UF" Type="nvarchar" MaxLength="100" />
+          <Property Name="TelResidencial" Type="nvarchar" MaxLength="100" />
+          <Property Name="CelularEle" Type="nvarchar" MaxLength="100" />
+          <Property Name="CelularEla" Type="nvarchar" MaxLength="100" />
+          <Property Name="EmailEle" Type="nvarchar" MaxLength="100" />
+          <Property Name="EmailEla" Type="nvarchar" MaxLength="100" />
+          <Property Name="ProfissaoEle" Type="nvarchar" MaxLength="100" />
+          <Property Name="ProfissaoEla" Type="nvarchar" MaxLength="100" />
+          <Property Name="LocalTrabalhoEle" Type="nvarchar" MaxLength="200" />
+          <Property Name="LocalTrabalhoEla" Type="nvarchar" MaxLength="200" />
+          <Property Name="CidadeTrabalhoEle" Type="nvarchar" MaxLength="100" />
+          <Property Name="CidadeTrabalhoEla" Type="nvarchar" MaxLength="100" />
+          <Property Name="PaiEle" Type="nvarchar" MaxLength="200" />
+          <Property Name="MaeEle" Type="nvarchar" MaxLength="200" />
+          <Property Name="EnderecoPaisEle" Type="nvarchar" MaxLength="200" />
+          <Property Name="NumeroPaisEle" Type="nvarchar" MaxLength="100" />
+          <Property Name="BairroPaisEle" Type="nvarchar" MaxLength="100" />
+          <Property Name="CidadePaisEle" Type="nvarchar" MaxLength="100" />
+          <Property Name="UFPaisEle" Type="nvarchar" MaxLength="2" />
+          <Property Name="CEPPaisEle" Type="nvarchar" MaxLength="20" />
+          <Property Name="TelResPaisEle" Type="nvarchar" MaxLength="20" />
+          <Property Name="TelCelPaisEle" Type="nvarchar" MaxLength="20" />
+          <Property Name="PaiEla" Type="nvarchar" MaxLength="200" />
+          <Property Name="MaeEla" Type="nvarchar" MaxLength="200" />
+          <Property Name="EnderecoPaisEla" Type="nvarchar" MaxLength="200" />
+          <Property Name="NumeroPaisEla" Type="nvarchar" MaxLength="100" />
+          <Property Name="BairroPaisEla" Type="nvarchar" MaxLength="100" />
+          <Property Name="CidadePaisEla" Type="nvarchar" MaxLength="100" />
+          <Property Name="UFPaisEla" Type="nvarchar" MaxLength="2" />
+          <Property Name="CEPPaisEla" Type="nvarchar" MaxLength="20" />
+          <Property Name="TelResPaisEla" Type="nvarchar" MaxLength="20" />
+          <Property Name="TelCelPaisEla" Type="nvarchar" MaxLength="20" />
+        </EntityType>
         <EntityType Name="CasaisConvidadores">
           <Key>
             <PropertyRef Name="IdCasalConvidador" />
@@ -29,9 +85,8 @@
         </EntityType>
         <EntityType Name="CasaisVisitadores">
           <Key>
-            <PropertyRef Name="CasalId" />
+            <PropertyRef Name="IdCasalVisitador" />
           </Key>
-          <Property Name="CasalId" Type="int" Nullable="false" />
           <Property Name="NomeEle" Type="nvarchar" MaxLength="200" />
           <Property Name="NomeEla" Type="nvarchar" MaxLength="200" />
           <Property Name="CelularEle" Type="nvarchar" MaxLength="20" />
@@ -46,6 +101,19 @@
           <Property Name="ApelidoEla" Type="nvarchar" MaxLength="100" />
           <Property Name="Observacoes" Type="nvarchar" MaxLength="600" />
           <Property Name="IdInscricao" Type="int" />
+          <Property Name="IdCasalVisitador" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Cuidadores">
+          <Key>
+            <PropertyRef Name="CuidadorId" />
+          </Key>
+          <Property Name="CuidadorId" Type="int" Nullable="false" />
+          <Property Name="CasalId" Type="int" Nullable="false" />
+          <Property Name="Nome" Type="nvarchar" MaxLength="200" />
+          <Property Name="Parentesco" Type="nvarchar" MaxLength="100" />
+          <Property Name="Fone" Type="nvarchar" MaxLength="20" />
+          <Property Name="Endereco" Type="nvarchar" MaxLength="200" />
+          <Property Name="PontoReferencia" Type="nvarchar" MaxLength="200" />
         </EntityType>
         <EntityType Name="Encontros">
           <Key>
@@ -60,14 +128,35 @@
           <Property Name="EventoRealizado" Type="bit" />
           <Property Name="QtdeCasais" Type="int" />
         </EntityType>
+        <EntityType Name="FilhosCasados">
+          <Key>
+            <PropertyRef Name="FilhoId" />
+          </Key>
+          <Property Name="FilhoId" Type="int" Nullable="false" />
+          <Property Name="CasalId" Type="int" Nullable="false" />
+          <Property Name="Nome" Type="nvarchar" MaxLength="200" />
+          <Property Name="Endereco" Type="nvarchar" MaxLength="400" />
+          <Property Name="Telefone" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="FilhosSolteiros">
+          <Key>
+            <PropertyRef Name="FilhoId" />
+          </Key>
+          <Property Name="FilhoId" Type="int" Nullable="false" />
+          <Property Name="CasalId" Type="int" Nullable="false" />
+          <Property Name="Nome" Type="nvarchar" MaxLength="200" />
+          <Property Name="Idade" Type="nvarchar" MaxLength="100" />
+        </EntityType>
         <EntityType Name="Inscricoes">
           <Key>
             <PropertyRef Name="IdInscricao" />
           </Key>
           <Property Name="IdInscricao" Type="int" Nullable="false" />
           <Property Name="IdEncontro" Type="int" Nullable="false" />
-          <Property Name="idCasal" Type="int" Nullable="false" />
+          <Property Name="idCasal" Type="float" Nullable="false" />
           <Property Name="Participou" Type="bit" Nullable="false" />
+          <Property Name="IdCasalVisitador" Type="int" />
+          <Property Name="IdCasalConvidador" Type="int" />
         </EntityType>
         <EntityType Name="Usuarios">
           <Key>
@@ -88,6 +177,10 @@
           <EntitySet Name="CasaisConvidadores" EntityType="EccModel.CasaisConvidadores" />
           <EntitySet Name="CasaisVisitadores" EntityType="EccModel.CasaisVisitadores" />
           <EntitySet Name="Inscricoes" EntityType="EccModel.Inscricoes" />
+          <EntitySet Name="Casais" EntityType="EccModel.Casais" />
+          <EntitySet Name="Cuidadores" EntityType="EccModel.Cuidadores" />
+          <EntitySet Name="FilhosCasados" EntityType="EccModel.FilhosCasados" />
+          <EntitySet Name="FilhosSolteiros" EntityType="EccModel.FilhosSolteiros" />
         </EntityContainer>
         <EntityType Name="Usuarios">
           <Key>
@@ -128,9 +221,8 @@
         </EntityType>
         <EntityType Name="CasaisVisitadores">
           <Key>
-            <PropertyRef Name="CasalId" />
+            <PropertyRef Name="IdCasalVisitador" />
           </Key>
-          <Property Type="Int32" Name="CasalId" Nullable="false" />
           <Property Type="String" Name="NomeEle" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="NomeEla" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="CelularEle" MaxLength="20" FixedLength="false" Unicode="true" />
@@ -145,6 +237,7 @@
           <Property Type="String" Name="ApelidoEla" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="Observacoes" MaxLength="600" FixedLength="false" Unicode="true" />
           <Property Type="Int32" Name="IdInscricao" />
+          <Property Type="Int32" Name="IdCasalVisitador" Nullable="false" />
         </EntityType>
         <EntityType Name="Inscricoes">
           <Key>
@@ -154,6 +247,91 @@
           <Property Type="Int32" Name="IdEncontro" Nullable="false" />
           <Property Type="Int32" Name="idCasal" Nullable="false" />
           <Property Type="Boolean" Name="Participou" Nullable="false" />
+          <Property Type="Int32" Name="IdCasalVisitador" />
+          <Property Type="Int32" Name="IdCasalConvidador" />
+        </EntityType>
+        <EntityType Name="Casais">
+          <Key>
+            <PropertyRef Name="CasalId" />
+          </Key>
+          <Property Type="Int32" Name="CasalId" Nullable="false" />
+          <Property Type="String" Name="NomeEle" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="NomeEla" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ReligiaoEle" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ReligiaoEla" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="DtNascimentoEle" />
+          <Property Type="DateTime" Name="DtNascimentoEla" />
+          <Property Type="String" Name="EstadoCivil" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="DtEstadoCivil" />
+          <Property Type="String" Name="Endereco" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CEP" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Numero" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Complemento" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Bairro" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Cidade" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="UF" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="TelResidencial" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CelularEle" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CelularEla" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="EmailEle" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="EmailEla" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ProfissaoEle" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ProfissaoEla" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LocalTrabalhoEle" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LocalTrabalhoEla" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CidadeTrabalhoEle" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CidadeTrabalhoEla" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PaiEle" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MaeEle" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="EnderecoPaisEle" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="NumeroPaisEle" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="BairroPaisEle" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CidadePaisEle" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="UFPaisEle" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CEPPaisEle" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="TelResPaisEle" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="TelCelPaisEle" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PaiEla" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MaeEla" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="EnderecoPaisEla" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="NumeroPaisEla" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="BairroPaisEla" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CidadePaisEla" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="UFPaisEla" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CEPPaisEla" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="TelResPaisEla" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="TelCelPaisEla" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Cuidadores">
+          <Key>
+            <PropertyRef Name="CuidadorId" />
+          </Key>
+          <Property Type="Int32" Name="CuidadorId" Nullable="false" />
+          <Property Type="Int32" Name="CasalId" Nullable="false" />
+          <Property Type="String" Name="Nome" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Parentesco" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Fone" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Endereco" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PontoReferencia" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="FilhosCasados">
+          <Key>
+            <PropertyRef Name="FilhoId" />
+          </Key>
+          <Property Type="Int32" Name="FilhoId" Nullable="false" />
+          <Property Type="Int32" Name="CasalId" Nullable="false" />
+          <Property Type="String" Name="Nome" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Endereco" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Telefone" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="FilhosSolteiros">
+          <Key>
+            <PropertyRef Name="FilhoId" />
+          </Key>
+          <Property Type="Int32" Name="FilhoId" Nullable="false" />
+          <Property Type="Int32" Name="CasalId" Nullable="false" />
+          <Property Type="String" Name="Nome" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Idade" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -204,6 +382,7 @@
           <EntitySetMapping Name="CasaisVisitadores">
             <EntityTypeMapping TypeName="EccModel.CasaisVisitadores">
               <MappingFragment StoreEntitySet="CasaisVisitadores">
+                <ScalarProperty Name="IdCasalVisitador" ColumnName="IdCasalVisitador" />
                 <ScalarProperty Name="IdInscricao" ColumnName="IdInscricao" />
                 <ScalarProperty Name="Observacoes" ColumnName="Observacoes" />
                 <ScalarProperty Name="ApelidoEla" ColumnName="ApelidoEla" />
@@ -218,17 +397,105 @@
                 <ScalarProperty Name="CelularEle" ColumnName="CelularEle" />
                 <ScalarProperty Name="NomeEla" ColumnName="NomeEla" />
                 <ScalarProperty Name="NomeEle" ColumnName="NomeEle" />
-                <ScalarProperty Name="CasalId" ColumnName="CasalId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Inscricoes">
             <EntityTypeMapping TypeName="EccModel.Inscricoes">
               <MappingFragment StoreEntitySet="Inscricoes">
+                <ScalarProperty Name="IdCasalConvidador" ColumnName="IdCasalConvidador" />
+                <ScalarProperty Name="IdCasalVisitador" ColumnName="IdCasalVisitador" />
                 <ScalarProperty Name="Participou" ColumnName="Participou" />
                 <ScalarProperty Name="idCasal" ColumnName="idCasal" />
                 <ScalarProperty Name="IdEncontro" ColumnName="IdEncontro" />
                 <ScalarProperty Name="IdInscricao" ColumnName="IdInscricao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Casais">
+            <EntityTypeMapping TypeName="EccModel.Casais">
+              <MappingFragment StoreEntitySet="Casais">
+                <ScalarProperty Name="TelCelPaisEla" ColumnName="TelCelPaisEla" />
+                <ScalarProperty Name="TelResPaisEla" ColumnName="TelResPaisEla" />
+                <ScalarProperty Name="CEPPaisEla" ColumnName="CEPPaisEla" />
+                <ScalarProperty Name="UFPaisEla" ColumnName="UFPaisEla" />
+                <ScalarProperty Name="CidadePaisEla" ColumnName="CidadePaisEla" />
+                <ScalarProperty Name="BairroPaisEla" ColumnName="BairroPaisEla" />
+                <ScalarProperty Name="NumeroPaisEla" ColumnName="NumeroPaisEla" />
+                <ScalarProperty Name="EnderecoPaisEla" ColumnName="EnderecoPaisEla" />
+                <ScalarProperty Name="MaeEla" ColumnName="MaeEla" />
+                <ScalarProperty Name="PaiEla" ColumnName="PaiEla" />
+                <ScalarProperty Name="TelCelPaisEle" ColumnName="TelCelPaisEle" />
+                <ScalarProperty Name="TelResPaisEle" ColumnName="TelResPaisEle" />
+                <ScalarProperty Name="CEPPaisEle" ColumnName="CEPPaisEle" />
+                <ScalarProperty Name="UFPaisEle" ColumnName="UFPaisEle" />
+                <ScalarProperty Name="CidadePaisEle" ColumnName="CidadePaisEle" />
+                <ScalarProperty Name="BairroPaisEle" ColumnName="BairroPaisEle" />
+                <ScalarProperty Name="NumeroPaisEle" ColumnName="NumeroPaisEle" />
+                <ScalarProperty Name="EnderecoPaisEle" ColumnName="EnderecoPaisEle" />
+                <ScalarProperty Name="MaeEle" ColumnName="MaeEle" />
+                <ScalarProperty Name="PaiEle" ColumnName="PaiEle" />
+                <ScalarProperty Name="CidadeTrabalhoEla" ColumnName="CidadeTrabalhoEla" />
+                <ScalarProperty Name="CidadeTrabalhoEle" ColumnName="CidadeTrabalhoEle" />
+                <ScalarProperty Name="LocalTrabalhoEla" ColumnName="LocalTrabalhoEla" />
+                <ScalarProperty Name="LocalTrabalhoEle" ColumnName="LocalTrabalhoEle" />
+                <ScalarProperty Name="ProfissaoEla" ColumnName="ProfissaoEla" />
+                <ScalarProperty Name="ProfissaoEle" ColumnName="ProfissaoEle" />
+                <ScalarProperty Name="EmailEla" ColumnName="EmailEla" />
+                <ScalarProperty Name="EmailEle" ColumnName="EmailEle" />
+                <ScalarProperty Name="CelularEla" ColumnName="CelularEla" />
+                <ScalarProperty Name="CelularEle" ColumnName="CelularEle" />
+                <ScalarProperty Name="TelResidencial" ColumnName="TelResidencial" />
+                <ScalarProperty Name="UF" ColumnName="UF" />
+                <ScalarProperty Name="Cidade" ColumnName="Cidade" />
+                <ScalarProperty Name="Bairro" ColumnName="Bairro" />
+                <ScalarProperty Name="Complemento" ColumnName="Complemento" />
+                <ScalarProperty Name="Numero" ColumnName="Numero" />
+                <ScalarProperty Name="CEP" ColumnName="CEP" />
+                <ScalarProperty Name="Endereco" ColumnName="Endereco" />
+                <ScalarProperty Name="DtEstadoCivil" ColumnName="DtEstadoCivil" />
+                <ScalarProperty Name="EstadoCivil" ColumnName="EstadoCivil" />
+                <ScalarProperty Name="DtNascimentoEla" ColumnName="DtNascimentoEla" />
+                <ScalarProperty Name="DtNascimentoEle" ColumnName="DtNascimentoEle" />
+                <ScalarProperty Name="ReligiaoEla" ColumnName="ReligiaoEla" />
+                <ScalarProperty Name="ReligiaoEle" ColumnName="ReligiaoEle" />
+                <ScalarProperty Name="NomeEla" ColumnName="NomeEla" />
+                <ScalarProperty Name="NomeEle" ColumnName="NomeEle" />
+                <ScalarProperty Name="CasalId" ColumnName="CasalId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cuidadores">
+            <EntityTypeMapping TypeName="EccModel.Cuidadores">
+              <MappingFragment StoreEntitySet="Cuidadores">
+                <ScalarProperty Name="PontoReferencia" ColumnName="PontoReferencia" />
+                <ScalarProperty Name="Endereco" ColumnName="Endereco" />
+                <ScalarProperty Name="Fone" ColumnName="Fone" />
+                <ScalarProperty Name="Parentesco" ColumnName="Parentesco" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="CasalId" ColumnName="CasalId" />
+                <ScalarProperty Name="CuidadorId" ColumnName="CuidadorId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FilhosCasados">
+            <EntityTypeMapping TypeName="EccModel.FilhosCasados">
+              <MappingFragment StoreEntitySet="FilhosCasados">
+                <ScalarProperty Name="Telefone" ColumnName="Telefone" />
+                <ScalarProperty Name="Endereco" ColumnName="Endereco" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="CasalId" ColumnName="CasalId" />
+                <ScalarProperty Name="FilhoId" ColumnName="FilhoId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FilhosSolteiros">
+            <EntityTypeMapping TypeName="EccModel.FilhosSolteiros">
+              <MappingFragment StoreEntitySet="FilhosSolteiros">
+                <ScalarProperty Name="Idade" ColumnName="Idade" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="CasalId" ColumnName="CasalId" />
+                <ScalarProperty Name="FilhoId" ColumnName="FilhoId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -253,11 +520,15 @@
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
       <Diagram Name="EccEntities" ZoomLevel="74">
-        <EntityTypeShape EntityType="EccModel.Usuarios" Width="1.5" PointX="4" PointY="0.625" Height="1.7879850260416674" IsExpanded="true" />
-        <EntityTypeShape EntityType="EccModel.Encontros" Width="1.5" PointX="1.875" PointY="0.875" Height="2.5571907552083335" />
+        <EntityTypeShape EntityType="EccModel.Usuarios" Width="1.5" PointX="3.75" PointY="0.75" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="EccModel.Encontros" Width="1.5" PointX="2" PointY="0.75" Height="2.5571907552083335" />
         <EntityTypeShape EntityType="EccModel.CasaisConvidadores" Width="1.5" PointX="3.75" PointY="2.875" Height="2.9417936197916656" />
         <EntityTypeShape EntityType="EccModel.CasaisVisitadores" Width="1.5" PointX="5.75" PointY="2.875" Height="3.9033007812499996" />
-        <EntityTypeShape EntityType="EccModel.Inscricoes" Width="1.5" PointX="7.75" PointY="1.875" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="EccModel.Inscricoes" Width="1.5" PointX="5.875" PointY="0.5" Height="2.172587890625" />
+        <EntityTypeShape EntityType="EccModel.Casais" Width="1.875" PointX="7.75" PointY="0.5" Height="10.056946614583332" />
+        <EntityTypeShape EntityType="EccModel.Cuidadores" Width="1.5" PointX="2" PointY="3.625" Height="2.3648893229166674" />
+        <EntityTypeShape EntityType="EccModel.FilhosCasados" Width="1.5" PointX="2" PointY="6.125" Height="1.9802864583333317" />
+        <EntityTypeShape EntityType="EccModel.FilhosSolteiros" Width="1.5" PointX="3.875" PointY="6.125" Height="1.7879850260416674" />
       </Diagram>
     </Diagrams>
   </Designer>

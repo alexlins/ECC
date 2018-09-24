@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtCadastro = new System.Windows.Forms.Label();
+            this.lblCadastro = new System.Windows.Forms.Label();
             this.chkConfirmado = new System.Windows.Forms.CheckBox();
             this.btnGravar = new System.Windows.Forms.Button();
             this.dtpInicial = new System.Windows.Forms.DateTimePicker();
@@ -46,18 +46,19 @@
             this.btnFechar = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
+            this.btnNovo = new System.Windows.Forms.Button();
             this.pnlResultado.SuspendLayout();
             this.SuspendLayout();
             // 
-            // txtCadastro
+            // lblCadastro
             // 
-            this.txtCadastro.AutoSize = true;
-            this.txtCadastro.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCadastro.Location = new System.Drawing.Point(24, 19);
-            this.txtCadastro.Name = "txtCadastro";
-            this.txtCadastro.Size = new System.Drawing.Size(280, 24);
-            this.txtCadastro.TabIndex = 0;
-            this.txtCadastro.Text = "Cadastro de Encontro de Casais";
+            this.lblCadastro.AutoSize = true;
+            this.lblCadastro.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCadastro.Location = new System.Drawing.Point(24, 19);
+            this.lblCadastro.Name = "lblCadastro";
+            this.lblCadastro.Size = new System.Drawing.Size(280, 24);
+            this.lblCadastro.TabIndex = 0;
+            this.lblCadastro.Text = "Cadastro de Encontro de Casais";
             // 
             // chkConfirmado
             // 
@@ -86,6 +87,7 @@
             this.dtpInicial.Name = "dtpInicial";
             this.dtpInicial.Size = new System.Drawing.Size(105, 20);
             this.dtpInicial.TabIndex = 3;
+            this.dtpInicial.ValueChanged += new System.EventHandler(this.dtpInicial_ValueChanged);
             // 
             // cboQtde
             // 
@@ -168,6 +170,7 @@
             // 
             // pnlResultado
             // 
+            this.pnlResultado.Controls.Add(this.btnNovo);
             this.pnlResultado.Controls.Add(this.lblResultado);
             this.pnlResultado.Controls.Add(this.btnFechar);
             this.pnlResultado.Location = new System.Drawing.Point(12, 305);
@@ -179,15 +182,17 @@
             // lblResultado
             // 
             this.lblResultado.AutoSize = true;
-            this.lblResultado.Location = new System.Drawing.Point(31, 13);
+            this.lblResultado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblResultado.ForeColor = System.Drawing.Color.Red;
+            this.lblResultado.Location = new System.Drawing.Point(3, 11);
             this.lblResultado.Name = "lblResultado";
-            this.lblResultado.Size = new System.Drawing.Size(151, 13);
+            this.lblResultado.Size = new System.Drawing.Size(221, 20);
             this.lblResultado.TabIndex = 14;
             this.lblResultado.Text = "Evento gravado com sucesso!";
             // 
             // btnFechar
             // 
-            this.btnFechar.Location = new System.Drawing.Point(308, 8);
+            this.btnFechar.Location = new System.Drawing.Point(308, 10);
             this.btnFechar.Name = "btnFechar";
             this.btnFechar.Size = new System.Drawing.Size(75, 23);
             this.btnFechar.TabIndex = 14;
@@ -211,6 +216,16 @@
             this.txtNome.Size = new System.Drawing.Size(368, 20);
             this.txtNome.TabIndex = 14;
             // 
+            // btnNovo
+            // 
+            this.btnNovo.Location = new System.Drawing.Point(227, 10);
+            this.btnNovo.Name = "btnNovo";
+            this.btnNovo.Size = new System.Drawing.Size(75, 23);
+            this.btnNovo.TabIndex = 15;
+            this.btnNovo.Text = "Novo";
+            this.btnNovo.UseVisualStyleBackColor = true;
+            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
+            // 
             // NovoEncontro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -231,7 +246,7 @@
             this.Controls.Add(this.dtpInicial);
             this.Controls.Add(this.btnGravar);
             this.Controls.Add(this.chkConfirmado);
-            this.Controls.Add(this.txtCadastro);
+            this.Controls.Add(this.lblCadastro);
             this.Name = "NovoEncontro";
             this.Text = "Novo Encontro";
             this.Load += new System.EventHandler(this.NovoEncontro_Load);
@@ -244,7 +259,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label txtCadastro;
+        private System.Windows.Forms.Label lblCadastro;
         private System.Windows.Forms.CheckBox chkConfirmado;
         private System.Windows.Forms.Button btnGravar;
         private System.Windows.Forms.DateTimePicker dtpInicial;
@@ -262,5 +277,6 @@
         private System.Windows.Forms.Label lblResultado;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtNome;
+        private System.Windows.Forms.Button btnNovo;
     }
 }

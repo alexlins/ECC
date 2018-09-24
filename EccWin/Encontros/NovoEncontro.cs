@@ -6,7 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using EccCross.ViewModel;
+using EccCross.ViewModel.Request;
+using EccCross.ViewModel.Response;
 using EccDomain;
 
 namespace EccWin.Encontros
@@ -25,6 +26,7 @@ namespace EccWin.Encontros
         {
             for (int i = 1; i <= 300; i++)
                 cboQtde.Items.Add(i.ToString());
+            cboQtde.SelectedIndex = 0;
         }
 
         private void btnFechar_Click(object sender, EventArgs e)
@@ -63,6 +65,7 @@ namespace EccWin.Encontros
             if (!valido)
             {
                 lblResultado.Text = "Preencha corretamente os campos";
+                btnNovo.Visible = false;
             }
             else
             {
@@ -76,11 +79,38 @@ namespace EccWin.Encontros
                 ervm.EventoRealizado = chkRealizado.Checked;
 
                 if (_encontro.GravarEncontro(ervm))
+                {
                     lblResultado.Text = "Gravado com sucesso";
+                    ApagarCampos();
+                    btnGravar.Enabled = false;
+                    btnCancelar.Enabled = false;
+                    txtNome.Enabled = true;
+                    txtLocal.Enabled = true;
+                    dtpFinal.Enabled = true;
+                    dtpInicial.Enabled = true;
+                    cboQtde.Enabled = true;
+                    chkConfirmado.Enabled = true;
+                    chkRealizado.Enabled = true;
+                    btnNovo.Visible = true;
+                }
                 else
+                {
+                    btnNovo.Visible = false;
                     lblResultado.Text = "Erro na gravação";
+                }
             }
             pnlResultado.Visible = true;
+        }
+
+        private void ApagarCampos()
+        {
+            txtNome.Clear();
+            txtLocal.Clear();
+            dtpFinal.MinDate = dtpFinal.Value = DateTime.Now;
+            dtpInicial.Value = DateTime.Now;
+            cboQtde.SelectedIndex = 0;
+            chkConfirmado.Checked = false;
+            chkRealizado.Checked = false;
         }
 
         private bool ValidaCampos()
@@ -98,6 +128,24 @@ namespace EccWin.Encontros
 
             return true;
 
+        }
+
+        private void dtpInicial_ValueChanged(object sender, EventArgs e)
+        {
+            dtpFinal.MinDate = dtpFinal.Value = dtpInicial.Value;
+        }
+
+        private void btnNovo_Click(object sender, EventArgs e)
+        {
+            txtNome.Enabled = true;
+            txtLocal.Enabled = true;
+            dtpFinal.Enabled = true;
+            dtpInicial.Enabled = true;
+            cboQtde.Enabled = true;
+            chkConfirmado.Enabled = true;
+            chkRealizado.Enabled = true;
+            btnCancelar.Enabled = true;
+            btnGravar.Enabled = true;
         }
     }
 }

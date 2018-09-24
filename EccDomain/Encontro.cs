@@ -2,17 +2,18 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using EccCross.ViewModel;
+using EccCross.ViewModel.Request;
+using EccCross.ViewModel.Response;
 
 namespace EccDomain
 {
     public class Encontro
     {
-        private EccInfra.Encontro _infra;
+        private EccInfra.Repository.EncontroRepository _infra;
 
         public Encontro()
         {
-            _infra = new EccInfra.Encontro();
+            _infra = new EccInfra.Repository.EncontroRepository();
         }
 
         public bool GravarEncontro(EncontroRequestViewModel viewModel)
@@ -33,8 +34,13 @@ namespace EccDomain
 
             if (retorno == null || retorno.EncontroId == 0)
                 return false;
-            
-                return true;
+
+            return true;
+        }
+
+        public List<EncontroResponseViewModel> GetAll()
+        {
+            return _infra.GetAll();
         }
 
         public List<EncontroResponseViewModel> GetEncontroByFilter(EncontroRequestViewModel filtro)
@@ -45,14 +51,14 @@ namespace EccDomain
                 String.IsNullOrEmpty(filtro.Nome) &&
                 filtro.DtInicial == null && filtro.DtFinal == null)
                 return resultado;
- 
-            if(!String.IsNullOrEmpty(filtro.Local))
-                resultado = resultado.Where(x=>x.Local == filtro.Local.Trim()).ToList();
+
+            if (!String.IsNullOrEmpty(filtro.Local))
+                resultado = resultado.Where(x => x.Local == filtro.Local.Trim()).ToList();
 
             if (!String.IsNullOrEmpty(filtro.Nome))
                 resultado = resultado.Where(x => x.Nome == filtro.Nome.Trim()).ToList();
 
-            if(filtro.DtInicial != null)
+            if (filtro.DtInicial != null)
                 resultado = resultado.Where(x => x.DtInicial >= filtro.DtInicial).ToList();
 
             if (filtro.DtFinal != null)

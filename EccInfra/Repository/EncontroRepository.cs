@@ -2,14 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using EccCross.ViewModel;
+using EccCross.ViewModel.Request;
+using EccCross.ViewModel.Response;
 
-namespace EccInfra
+namespace EccInfra.Repository
 {
-    public class Encontro
+    public class EncontroRepository
     {
         private EccEntities _entity;
-        public Encontro()
+        public EncontroRepository()
         {
             _entity = new EccEntities();
         }
@@ -70,7 +71,10 @@ namespace EccInfra
             if (ee.EncontroId == 0)
             {
                 var ultimo = _entity.Encontros.OrderByDescending(o => o.EncontroId).ToList();
-                ee.EncontroId = ultimo[0].EncontroId + 1;
+                if (ultimo.Any())
+                    ee.EncontroId = ultimo[0].EncontroId + 1;
+                else
+                    ee.EncontroId = 1;
                 _entity.AddObject("Encontros", ee);
             }
 

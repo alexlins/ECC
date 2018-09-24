@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace EccCross.ViewModel
+namespace EccCross.ViewModel.Response
 {
     public class EncontroResponseViewModel
     {

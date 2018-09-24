@@ -100,6 +100,7 @@
             this.casaisToolStripMenuItem.Name = "casaisToolStripMenuItem";
             this.casaisToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.casaisToolStripMenuItem.Text = "Casais";
+            this.casaisToolStripMenuItem.Click += new System.EventHandler(this.casaisToolStripMenuItem_Click);
             // 
             // relatóriosToolStripMenuItem
             // 

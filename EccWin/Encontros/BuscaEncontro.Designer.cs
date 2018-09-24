@@ -40,6 +40,15 @@
             this.chkIncluirData = new System.Windows.Forms.CheckBox();
             this.grdResultado = new System.Windows.Forms.DataGridView();
             this.lblResultado = new System.Windows.Forms.Label();
+            this.EncontroId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Local = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DtInicial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DtFinal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EventoConfirmado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EventoRealizado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QtdeCasais = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Link = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grdResultado)).BeginInit();
             this.SuspendLayout();
             // 
@@ -133,7 +142,17 @@
             // grdResultado
             // 
             this.grdResultado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdResultado.Location = new System.Drawing.Point(33, 172);
+            this.grdResultado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.EncontroId,
+            this.Nome,
+            this.Local,
+            this.DtInicial,
+            this.DtFinal,
+            this.EventoConfirmado,
+            this.EventoRealizado,
+            this.QtdeCasais,
+            this.Link});
+            this.grdResultado.Location = new System.Drawing.Point(33, 171);
             this.grdResultado.Name = "grdResultado";
             this.grdResultado.Size = new System.Drawing.Size(407, 207);
             this.grdResultado.TabIndex = 9;
@@ -147,6 +166,73 @@
             this.lblResultado.TabIndex = 10;
             this.lblResultado.Text = "Não foram encontrados resultados";
             this.lblResultado.Visible = false;
+            // 
+            // EncontroId
+            // 
+            this.EncontroId.DataPropertyName = "EncontroId";
+            this.EncontroId.HeaderText = "Código";
+            this.EncontroId.Name = "EncontroId";
+            this.EncontroId.Width = 50;
+            // 
+            // Nome
+            // 
+            this.Nome.DataPropertyName = "Nome";
+            this.Nome.HeaderText = "Nome";
+            this.Nome.Name = "Nome";
+            // 
+            // Local
+            // 
+            this.Local.DataPropertyName = "Local";
+            this.Local.HeaderText = "Local";
+            this.Local.Name = "Local";
+            // 
+            // DtInicial
+            // 
+            this.DtInicial.DataPropertyName = "DtInicial";
+            this.DtInicial.HeaderText = "Data Início";
+            this.DtInicial.Name = "DtInicial";
+            this.DtInicial.Width = 50;
+            // 
+            // DtFinal
+            // 
+            this.DtFinal.DataPropertyName = "DtFinal";
+            this.DtFinal.HeaderText = "Data Final";
+            this.DtFinal.Name = "DtFinal";
+            this.DtFinal.Width = 50;
+            // 
+            // EventoConfirmado
+            // 
+            this.EventoConfirmado.DataPropertyName = "EventoConfirmado";
+            this.EventoConfirmado.HeaderText = "Confirmado";
+            this.EventoConfirmado.Name = "EventoConfirmado";
+            this.EventoConfirmado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.EventoConfirmado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // EventoRealizado
+            // 
+            this.EventoRealizado.DataPropertyName = "EventoRealizado";
+            this.EventoRealizado.HeaderText = "Realizado";
+            this.EventoRealizado.Name = "EventoRealizado";
+            this.EventoRealizado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.EventoRealizado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // QtdeCasais
+            // 
+            this.QtdeCasais.DataPropertyName = "QtdeCasais";
+            this.QtdeCasais.HeaderText = "Casais Participantes";
+            this.QtdeCasais.Name = "QtdeCasais";
+            this.QtdeCasais.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.QtdeCasais.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.QtdeCasais.Width = 50;
+            // 
+            // Link
+            // 
+            this.Link.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Link.HeaderText = "";
+            this.Link.Name = "Link";
+            this.Link.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Link.Text = "Detalhes";
+            this.Link.UseColumnTextForButtonValue = true;
             // 
             // BuscaEncontro
             // 
@@ -167,6 +253,7 @@
             this.Controls.Add(this.btnProcurar);
             this.Name = "BuscaEncontro";
             this.Text = "Busca Encontro";
+            this.Load += new System.EventHandler(this.BuscaEncontro_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grdResultado)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -187,5 +274,14 @@
         private System.Windows.Forms.CheckBox chkIncluirData;
         private System.Windows.Forms.DataGridView grdResultado;
         private System.Windows.Forms.Label lblResultado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EncontroId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Local;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DtInicial;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DtFinal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EventoConfirmado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EventoRealizado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn QtdeCasais;
+        private System.Windows.Forms.DataGridViewButtonColumn Link;
     }
 }

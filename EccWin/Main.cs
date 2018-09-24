@@ -33,7 +33,7 @@ namespace EccWin
 
         private void préInscriçãoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            NovaInscricao ni = new NovaInscricao();
+            frmInscricao ni = new frmInscricao();
             ni.MdiParent = this;
             ni.Show();
         }
@@ -43,6 +43,13 @@ namespace EccWin
             BuscaEncontro be = new BuscaEncontro();
             be.MdiParent = this;
             be.Show();
+        }
+
+        private void casaisToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BuscaInscricao ni = new BuscaInscricao();
+            ni.MdiParent = this;
+            ni.Show();
         }
     }
 }

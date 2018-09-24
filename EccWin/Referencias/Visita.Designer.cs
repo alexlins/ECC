@@ -60,12 +60,12 @@
             this.txtELAApelido = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.pnlResultado = new System.Windows.Forms.Panel();
             this.lblResultado = new System.Windows.Forms.Label();
             this.btnFechar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGravar = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.pnlResultado.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -303,7 +303,7 @@
             // 
             this.txtRestricao.Location = new System.Drawing.Point(236, 425);
             this.txtRestricao.Name = "txtRestricao";
-            this.txtRestricao.Size = new System.Drawing.Size(415, 20);
+            this.txtRestricao.Size = new System.Drawing.Size(483, 20);
             this.txtRestricao.TabIndex = 26;
             // 
             // label15
@@ -346,14 +346,6 @@
             this.label17.Size = new System.Drawing.Size(70, 13);
             this.label17.TabIndex = 31;
             this.label17.Text = "Observações";
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panel1.Location = new System.Drawing.Point(46, 484);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(604, 58);
-            this.panel1.TabIndex = 32;
             // 
             // pnlResultado
             // 
@@ -401,16 +393,24 @@
             this.btnGravar.Text = "Gravar";
             this.btnGravar.UseVisualStyleBackColor = true;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(43, 478);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(677, 75);
+            this.textBox1.TabIndex = 36;
+            // 
             // Visita
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(749, 651);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.pnlResultado);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGravar);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.txtELAApelido);
             this.Controls.Add(this.label16);
@@ -487,11 +487,11 @@
         private System.Windows.Forms.TextBox txtELAApelido;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel pnlResultado;
         private System.Windows.Forms.Label lblResultado;
         private System.Windows.Forms.Button btnFechar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnGravar;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

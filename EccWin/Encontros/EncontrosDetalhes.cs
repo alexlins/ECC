@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using EccDomain;
-using EccCross.ViewModel;
+using EccCross.ViewModel.Request;
+using EccCross.ViewModel.Response;
 
 namespace EccWin.Encontros
 {

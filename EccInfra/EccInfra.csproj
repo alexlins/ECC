@@ -84,7 +84,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EccEntities.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Encontro.cs" />
+    <Compile Include="Repository\CasaisConvidadoresRepository.cs" />
+    <Compile Include="Repository\CasalRepository.cs" />
+    <Compile Include="Repository\CasalVisitadorRepository.cs" />
+    <Compile Include="Repository\CuidadoresRepository.cs" />
+    <Compile Include="Repository\EncontroRepository.cs" />
+    <Compile Include="Repository\FilhosCasadosRepository.cs" />
+    <Compile Include="Repository\FilhosSolteirosRepository.cs" />
+    <Compile Include="Repository\InscricoesRepository.cs" />
     <Compile Include="UserInfra.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

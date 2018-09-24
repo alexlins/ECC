@@ -6,7 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using EccCross.ViewModel;
+using EccCross.ViewModel.Request;
+using EccCross.ViewModel.Response;
 using EccDomain;
 
 namespace EccWin.Encontros
@@ -63,6 +64,11 @@ namespace EccWin.Encontros
                 grdResultado.Visible = false;
                 lblResultado.Visible = true;
             }
+        }
+
+        private void BuscaEncontro_Load(object sender, EventArgs e)
+        {
+            grdResultado.Visible = false;
         }
     }
 }
