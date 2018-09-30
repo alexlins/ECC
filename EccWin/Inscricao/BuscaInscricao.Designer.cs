@@ -105,7 +105,7 @@
             this.gridResultado.TabIndex = 5;
             this.gridResultado.Visible = false;
             this.gridResultado.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridResultado_CellClick);
-            this.gridResultado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridResultado_CellContentClick);
+            //this.gridResultado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridResultado_CellContentClick);
             // 
             // btnProcurarInscrição
             // 
